@@ -14,7 +14,7 @@ Personal portfolio site for Matt Kraus, hosted at **krauslabs.com** on Cloudflar
 - JS: Vanilla — floating skills constellation, cursor glow, scroll reveals, browser detection
 - Hosting: Cloudflare Workers & Pages (static asset upload)
 - DNS: Cloudflare (same account)
-- Domain: krauslabs.com (realshift.app reserved for product later)
+- Domain: krauslabs.com, shiftladder.com (live SaaS product)
 
 ## Design System
 - **Background:** #09090b (near-black)
@@ -52,7 +52,7 @@ Or manually: Cloudflare dashboard > Workers & Pages > krauslabs > New deployment
 2. **Hero** — Canvas with floating skill keywords (36 skills drift, light up orange near cursor with connection lines), name in orange monospace, headline "The one they call when production is down.", contact row
 3. **Callout bar** — "Multi-person, multi-day operations → One person. A few hours. My script."
 4. **Bento stats** — 5 boxes: 30+ years, 17 at Fiserv, 300+ FI clients, 100+ servers, 5 shipped
-5. **Projects** — "What I've been shipping" with ops-intent intro paragraph. epc-backend (Live), RealShift (Dev), MaxBuyIQ (QA), AI image pipeline, RationMe
+5. **Projects** — "What I've been shipping" with ops-intent intro paragraph. epc-backend (Live), ShiftLadder (Live), MaxBuyIQ (QA), AI image pipeline, RationMe
 6. **Automation & AI** — 4 duo cards: AI-assisted dev, Local inference, Workflow automation, Self-hosted infrastructure
 7. **Career** — 4 roles with kickers on Fiserv and SASI entries. Includes CA Technology (1997-2000) to close gap
 8. **Skills grid** — 8 categories, tags glow orange on hover
