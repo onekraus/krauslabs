@@ -40,12 +40,26 @@ The JS MUST follow these rules or Cloudflare will break it:
 - **Email Address Obfuscation:** OFF (Security > Settings)
 - **Auto Minify JS:** OFF (if it exists under Speed > Optimization)
 
-## Deploy Process
-```bash
-cd ~/projects/krauslabs
-wrangler pages deploy . --project-name krauslabs
-```
-Or manually: Cloudflare dashboard > Workers & Pages > krauslabs > New deployment > upload index.html
+## Dev → Prod Workflow
+
+The site is a single static HTML file. Three layers:
+
+| Layer | Command | URL | When |
+|-------|---------|-----|------|
+| **Local** | `npm run dev` | http://localhost:8788 | Editing — instant feedback via Wrangler's local Cloudflare runtime |
+| **Preview** | `npm run preview` | https://main.krauslabs.pages.dev | Final check on real Cloudflare infra, or to share a link |
+| **Production** | `npm run deploy` | https://krauslabs.com | Ship it |
+| **Cache purge** | `npm run purge` | — | After deploy, if cached content lingers |
+
+Use `npm run dev` instead of `python -m http.server` because Wrangler emulates the actual Cloudflare Workers runtime — it catches Rocket Loader, email obfuscation, and edge header issues that a plain HTTP server would miss.
+
+The preview deploy lives on the `main` branch and never touches `krauslabs.com`. Only `npm run deploy` (which targets the `production` branch) updates the live site.
+
+`npm run purge` reads `CLOUDFLARE_API_TOKEN` from `~/.krauslabs-secrets.env` and hits the zone purge API. Token needs `Zone > Cache Purge > Purge` permission.
+
+## Manual deploy fallback
+
+If npm/wrangler isn't available for any reason, you can still upload directly via the Cloudflare dashboard: Workers & Pages > krauslabs > Create deployment > upload index.html.
 
 ## Page Structure (current v7)
 1. **Nav** — Sticky, frosted glass blur, KL monogram logo, 5 links (Work, Career, Skills, References, Contact)
@@ -53,13 +67,14 @@ Or manually: Cloudflare dashboard > Workers & Pages > krauslabs > New deployment
 3. **Callout bar** — "Multi-person, multi-day operations → One person. A few hours. My script."
 4. **Bento stats** — 5 boxes: 30+ years, 17 at Fiserv, 300+ FI clients, 100+ servers, 5 shipped
 5. **Projects** — "What I've been shipping" with ops-intent intro paragraph. epc-backend (Live), ShiftLadder (Live), MaxBuyIQ (QA), AI image pipeline, RationMe
-6. **Automation & AI** — 4 duo cards: AI-assisted dev, Local inference, Workflow automation, Self-hosted infrastructure
-7. **Career** — 4 roles with kickers on Fiserv and SASI entries. Includes CA Technology (1997-2000) to close gap
-8. **Skills grid** — 8 categories, tags glow orange on hover
-9. **Quick fit** — 3 cards: targeting roles, location/availability, proof of work (with browser/OS detection)
-10. **Testimonials** — 2 placeholder quote cards (NEED REAL QUOTES from colleagues)
-11. **CTA** — "Your team needs a problem solver." Email + LinkedIn buttons
-12. **Footer** — "Built by Matt Kraus"
+6. **Live Systems** — Live monitoring dashboard. 3 status cards (ShiftLadder, epc-backend, krauslabs.com) + wide ops detail panel (epc dependency breakdown + ShiftLadder app health). Pulls from UptimeRobot read-only API + epc-backend `/health/dependencies` + ShiftLadder `/api/public/status`. Auto-refreshes every 60s. UptimeRobot read-only API key embedded client-side (safe — read-only). All fetch failures degrade gracefully.
+7. **Automation & AI** — 4 duo cards: AI-assisted dev, Local inference, Workflow automation, Self-hosted infrastructure
+8. **Career** — 4 roles with kickers on Fiserv and SASI entries. Includes CA Technology (1997-2000) to close gap
+9. **Skills grid** — 8 categories, tags glow orange on hover
+10. **Quick fit** — 3 cards: targeting roles, location/availability, proof of work (with browser/OS detection)
+11. **Testimonials** — 2 placeholder quote cards (NEED REAL QUOTES from colleagues)
+12. **CTA** — "Your team needs a problem solver." Email + LinkedIn buttons
+13. **Footer** — "Built by Matt Kraus"
 
 ## Content Voice
 Confident, earned swagger. Not arrogant toward others — proud of own track record. Key lines:

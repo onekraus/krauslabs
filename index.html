@@ -231,6 +231,68 @@ footer{padding:24px 0;border-top:1px solid var(--border);text-align:center;font-
 .r.v{opacity:1;transform:none}
 .r:nth-child(2){transition-delay:.05s}.r:nth-child(3){transition-delay:.1s}
 .r:nth-child(4){transition-delay:.15s}.r:nth-child(5){transition-delay:.2s}
+
+/* === LIVE SYSTEMS / OPS DASHBOARD === */
+.mon-intro{font-size:.92rem;color:var(--sub);margin-bottom:24px;max-width:680px}
+.mon-intro .blink{display:inline-block;width:7px;height:7px;background:var(--mint);border-radius:50%;margin-right:8px;vertical-align:middle;animation:blink 2s ease infinite;box-shadow:0 0 8px rgba(0,229,160,.6)}
+
+.mon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px}
+.mon-card{background:var(--glass);border:1px solid var(--border);border-radius:14px;padding:22px 24px;position:relative;overflow:hidden;transition:all .35s}
+.mon-card::before{content:'';position:absolute;left:0;top:0;width:3px;height:100%;background:var(--mint);opacity:.5;transition:all .3s}
+.mon-card.degraded::before{background:var(--accent)}
+.mon-card.down::before{background:#ff4d4d}
+.mon-card:hover{border-color:rgba(0,229,160,.25);background:var(--glass-h);transform:translateY(-2px)}
+.mon-card.degraded:hover{border-color:rgba(255,106,26,.25)}
+.mon-card.down:hover{border-color:rgba(255,77,77,.25)}
+.mon-card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.mon-name{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--sub)}
+.mon-dot{width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 10px rgba(0,229,160,.55);animation:blink 2.4s ease infinite}
+.mon-card.degraded .mon-dot{background:var(--accent);box-shadow:0 0 10px rgba(255,106,26,.55)}
+.mon-card.down .mon-dot{background:#ff4d4d;box-shadow:0 0 10px rgba(255,77,77,.6)}
+.mon-metric{font-size:1.7rem;font-weight:700;letter-spacing:-.01em;font-family:var(--mono);background:linear-gradient(135deg,#fff 30%,var(--mint));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1}
+.mon-card.degraded .mon-metric{background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.mon-card.down .mon-metric{background:linear-gradient(135deg,#fff 30%,#ff4d4d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.mon-sub{font-family:var(--mono);font-size:.74rem;color:var(--dim);margin-top:6px;letter-spacing:.02em}
+
+.mon-detail{background:var(--glass);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:12px}
+.mon-detail-cols{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.mon-detail-h{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.mon-detail-h::after{content:'';flex:1;height:1px;background:var(--border)}
+.mon-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.04);font-family:var(--mono);font-size:.78rem}
+.mon-row:last-child{border:none}
+.mon-row-l{color:var(--sub);display:flex;align-items:center;gap:9px}
+.mon-row-l .d{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 6px rgba(0,229,160,.4);flex-shrink:0}
+.mon-row-l.degraded .d{background:var(--accent);box-shadow:0 0 6px rgba(255,106,26,.4)}
+.mon-row-l.down .d{background:#ff4d4d;box-shadow:0 0 6px rgba(255,77,77,.5)}
+.mon-row-v{color:var(--text);font-weight:500}
+.mon-row-v.dim{color:var(--dim);font-weight:400}
+.mon-row-v.green{color:var(--mint)}
+.mon-row-v.amber{color:var(--accent)}
+.mon-row-v.red{color:#ff4d4d}
+
+.mon-loading{font-family:var(--mono);font-size:.78rem;color:var(--dim);padding:7px 0}
+
+.mon-actions{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;margin-top:8px}
+.mon-meta{font-family:var(--mono);font-size:.74rem;color:var(--dim);letter-spacing:.02em;display:flex;align-items:center;gap:8px}
+.mon-meta .pulse{width:6px;height:6px;border-radius:50%;background:var(--mint);animation:blink 2s ease infinite}
+.mon-btns{display:flex;gap:10px}
+.mon-btn{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;text-transform:uppercase;padding:10px 20px;border-radius:8px;border:1px solid var(--border);color:var(--sub);transition:all .25s;display:inline-flex;align-items:center;gap:8px}
+.mon-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-s)}
+.mon-btn .arrow{transition:transform .25s}
+.mon-btn:hover .arrow{transform:translateX(3px)}
+
+@media(max-width:768px){
+  .mon-grid{grid-template-columns:1fr;gap:10px}
+  .mon-card{padding:18px 20px;border-radius:10px}
+  .mon-metric{font-size:1.45rem}
+  .mon-detail{padding:20px;border-radius:10px}
+  .mon-detail-cols{grid-template-columns:1fr;gap:24px}
+  .mon-row{font-size:.74rem}
+  .mon-actions{flex-direction:column;align-items:stretch}
+  .mon-meta{justify-content:center}
+  .mon-btns{justify-content:center}
+  .mon-btn{padding:12px 20px;min-height:44px;justify-content:center}
+}
 </style>
 </head>
 <body>
@@ -285,6 +347,51 @@ footer{padding:24px 0;border-top:1px solid var(--border);text-align:center;font-
     <div class="duo">
       <div class="dc r"><h3>AI image pipeline</h3><div class="tech">Gemini · Cloud Vision · dHash</div><p>Parallel recognition across multiple AI providers. Confidence merging, fuzzy dedup, automated brand inference.</p></div>
       <div class="dc r"><h3>RationMe</h3><div class="tech">Swift · SwiftUI · SwiftData · WatchConnectivity</div><p>iOS + Apple Watch. Adaptive scheduling, pattern analytics, bidirectional device comms.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="sec" id="monitoring">
+  <div class="sh">// Live systems</div>
+  <p class="mon-intro r"><span class="blink"></span>Real production monitoring across my live systems. Status pulled live from UptimeRobot and direct health checks against the running services. Auto-refreshes every 60 seconds.</p>
+
+  <div class="mon-grid">
+    <div class="mon-card r" id="mon-shiftladder">
+      <div class="mon-card-head"><span class="mon-name">ShiftLadder</span><span class="mon-dot"></span></div>
+      <div class="mon-metric" id="msl-metric">— %</div>
+      <div class="mon-sub" id="msl-sub">checking…</div>
+    </div>
+    <div class="mon-card r" id="mon-epc">
+      <div class="mon-card-head"><span class="mon-name">epc-backend</span><span class="mon-dot"></span></div>
+      <div class="mon-metric" id="mepc-metric">—</div>
+      <div class="mon-sub" id="mepc-sub">checking…</div>
+    </div>
+    <div class="mon-card r" id="mon-kl">
+      <div class="mon-card-head"><span class="mon-name">krauslabs.com</span><span class="mon-dot"></span></div>
+      <div class="mon-metric" id="mkl-metric">— %</div>
+      <div class="mon-sub" id="mkl-sub">checking…</div>
+    </div>
+  </div>
+
+  <div class="mon-detail r">
+    <div class="mon-detail-cols">
+      <div>
+        <div class="mon-detail-h">epc-backend dependencies</div>
+        <div id="mon-deps"><div class="mon-loading">Fetching live dependency status…</div></div>
+      </div>
+      <div>
+        <div class="mon-detail-h">ShiftLadder application health</div>
+        <div id="mon-sl-health"><div class="mon-loading">Fetching application health…</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mon-actions">
+    <div class="mon-meta"><span class="pulse"></span><span id="mon-last">Initializing…</span></div>
+    <div class="mon-btns">
+      <a href="https://stats.uptimerobot.com/7Zb0Bjy74f" target="_blank" rel="noopener" class="mon-btn">View Status Page <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -670,6 +777,209 @@ document.addEventListener("DOMContentLoaded", function() {
   var vOs = document.getElementById("v-os");
   if (vBrowser) vBrowser.textContent = detectBrowser();
   if (vOs) vOs.textContent = detectOS();
+
+  /* === LIVE SYSTEMS DASHBOARD === */
+  /* Pulls real production data from:
+     1. UptimeRobot read-only API (uptime % + response times)
+     2. epc-backend /health/dependencies (per-service status)
+     3. ShiftLadder /api/public/status (app + DB health)
+     Auto-refreshes every 60 seconds. Degrades gracefully on fetch failures. */
+
+  var URO_KEY = "ur3322150-674fc6dc8d4e6d8a177b9cc4";
+  var URO_MONITORS = "802813985-802813986-802813987-802813988-802813989";
+  /* 802813985 = ShiftLadder Homepage
+     802813986 = ShiftLadder Status API
+     802813987 = epc-backend Production Health
+     802813988 = epc-backend Production Dependencies
+     802813989 = Krauslabs Portfolio */
+
+  var lastFetchAt = null;
+
+  function setCardState(cardId, state) {
+    var el = document.getElementById(cardId);
+    if (!el) return;
+    el.classList.remove("degraded", "down");
+    if (state === "degraded") el.classList.add("degraded");
+    if (state === "down") el.classList.add("down");
+  }
+
+  function setText(id, text) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = text;
+  }
+
+  function fmtUptime(ratio) {
+    var n = parseFloat(ratio);
+    if (isNaN(n)) return "—";
+    return n.toFixed(2) + "%";
+  }
+
+  function uptimeState(ratio) {
+    var n = parseFloat(ratio);
+    if (isNaN(n)) return "down";
+    if (n >= 99.0) return "up";
+    if (n >= 95.0) return "degraded";
+    return "down";
+  }
+
+  function fetchUptimeRobot() {
+    var body = "api_key=" + URO_KEY + "&format=json&monitors=" + URO_MONITORS + "&custom_uptime_ratios=7&response_times=1&response_times_limit=1";
+    return fetch("https://api.uptimerobot.com/v2/getMonitors", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: body
+    }).then(function(r) { return r.json(); }).then(function(data) {
+      if (data.stat !== "ok") throw new Error("uptimerobot stat not ok");
+      var monitors = data.monitors || {};
+      var byId = {};
+      var i;
+      for (i = 0; i < monitors.length; i++) {
+        byId[monitors[i].id] = monitors[i];
+      }
+
+      /* ShiftLadder card uses the homepage monitor (802813985) */
+      var sl = byId[802813985];
+      if (sl) {
+        var slUptime = sl.custom_uptime_ratio || "0";
+        setText("msl-metric", fmtUptime(slUptime));
+        var slRt = "—";
+        if (sl.response_times && sl.response_times.length > 0) {
+          slRt = sl.response_times[0].value + " ms";
+        }
+        setText("msl-sub", "7-day uptime · " + slRt + " avg");
+        setCardState("mon-shiftladder", sl.status === 2 ? uptimeState(slUptime) : "down");
+      }
+
+      /* krauslabs.com card uses portfolio monitor (802813989) */
+      var kl = byId[802813989];
+      if (kl) {
+        var klUptime = kl.custom_uptime_ratio || "0";
+        setText("mkl-metric", fmtUptime(klUptime));
+        var klRt = "—";
+        if (kl.response_times && kl.response_times.length > 0) {
+          klRt = kl.response_times[0].value + " ms";
+        }
+        setText("mkl-sub", "7-day uptime · " + klRt + " avg");
+        setCardState("mon-kl", kl.status === 2 ? uptimeState(klUptime) : "down");
+      }
+    }).catch(function(err) {
+      setText("msl-metric", "—");
+      setText("msl-sub", "Unable to reach UptimeRobot");
+      setCardState("mon-shiftladder", "degraded");
+      setText("mkl-metric", "—");
+      setText("mkl-sub", "Unable to reach UptimeRobot");
+      setCardState("mon-kl", "degraded");
+    });
+  }
+
+  function fetchEpcDependencies() {
+    return fetch("https://epc-backend.fly.dev/health/dependencies").then(function(r) {
+      return r.json();
+    }).then(function(data) {
+      var services = data.services || {};
+      var keys = Object.keys(services);
+      var okCount = 0;
+      var i;
+      for (i = 0; i < keys.length; i++) {
+        if (services[keys[i]].status === "ok") okCount++;
+      }
+      setText("mepc-metric", okCount + "/" + keys.length);
+      setText("mepc-sub", "services healthy · " + (data.total_ms || "—") + "ms total");
+      var state = "up";
+      if (okCount < keys.length) state = "degraded";
+      if (data.status === "down" || okCount === 0) state = "down";
+      setCardState("mon-epc", state);
+
+      /* Build the dependency list for the detail panel */
+      var depsEl = document.getElementById("mon-deps");
+      if (depsEl) {
+        var html = "";
+        var displayName = {
+          rapidapi: "RapidAPI",
+          gemini: "Gemini AI",
+          ebay_browse: "eBay Browse API",
+          cloud_vision: "Google Cloud Vision",
+          apify: "Apify",
+          turso: "Turso (LibSQL)",
+          upcitemdb: "UPCItemDB",
+          redis: "Upstash Redis",
+          serpapi: "SerpAPI",
+          openai: "OpenAI"
+        };
+        for (i = 0; i < keys.length; i++) {
+          var k = keys[i];
+          var svc = services[k];
+          var name = displayName[k] || k;
+          var rowState = svc.status === "ok" ? "" : (svc.status === "degraded" ? "degraded" : "down");
+          var valColor = svc.status === "ok" ? "green" : (svc.status === "degraded" ? "amber" : "red");
+          var lat = (svc.latency_ms != null) ? (svc.latency_ms + " ms") : "—";
+          html += "<div class=\"mon-row\"><span class=\"mon-row-l " + rowState + "\"><span class=\"d\"></span>" + name + "</span><span class=\"mon-row-v " + valColor + "\">" + lat + "</span></div>";
+        }
+        depsEl.innerHTML = html;
+      }
+    }).catch(function(err) {
+      setText("mepc-metric", "—");
+      setText("mepc-sub", "Unable to reach epc-backend");
+      setCardState("mon-epc", "down");
+      var depsEl = document.getElementById("mon-deps");
+      if (depsEl) depsEl.innerHTML = "<div class=\"mon-loading\">Unable to reach epc-backend dependencies endpoint</div>";
+    });
+  }
+
+  function fetchShiftladderHealth() {
+    return fetch("https://shiftladder.com/api/public/status").then(function(r) {
+      return r.json();
+    }).then(function(data) {
+      var slEl = document.getElementById("mon-sl-health");
+      if (!slEl) return;
+      var db = data.database || {};
+      var jobs = data.jobs || {};
+      var feat = data.features || {};
+      var dbColor = db.status === "healthy" ? "green" : (db.status === "degraded" ? "amber" : "red");
+      var dbState = db.status === "healthy" ? "" : (db.status === "degraded" ? "degraded" : "down");
+      var html = "";
+      html += "<div class=\"mon-row\"><span class=\"mon-row-l " + dbState + "\"><span class=\"d\"></span>Database</span><span class=\"mon-row-v " + dbColor + "\">" + (db.status || "—") + "</span></div>";
+      html += "<div class=\"mon-row\"><span class=\"mon-row-l\"><span class=\"d\"></span>DB latency</span><span class=\"mon-row-v\">" + ((db.latency_ms != null) ? (db.latency_ms + " ms") : "—") + "</span></div>";
+      html += "<div class=\"mon-row\"><span class=\"mon-row-l\"><span class=\"d\"></span>Job profiles</span><span class=\"mon-row-v\">" + ((jobs.count != null) ? jobs.count : "—") + "</span></div>";
+      html += "<div class=\"mon-row\"><span class=\"mon-row-l\"><span class=\"d\"></span>Quiz engine</span><span class=\"mon-row-v " + (feat.quiz ? "green" : "dim") + "\">" + (feat.quiz ? "enabled" : "disabled") + "</span></div>";
+      html += "<div class=\"mon-row\"><span class=\"mon-row-l\"><span class=\"d\"></span>Resume matcher</span><span class=\"mon-row-v " + (feat.resume ? "green" : "dim") + "\">" + (feat.resume ? "enabled" : "disabled") + "</span></div>";
+      html += "<div class=\"mon-row\"><span class=\"mon-row-l\"><span class=\"d\"></span>Songs / audio</span><span class=\"mon-row-v " + (feat.songs ? "green" : "dim") + "\">" + (feat.songs ? "enabled" : "disabled") + "</span></div>";
+      html += "<div class=\"mon-row\"><span class=\"mon-row-l\"><span class=\"d\"></span>Total response</span><span class=\"mon-row-v dim\">" + ((data.response_ms != null) ? (data.response_ms + " ms") : "—") + "</span></div>";
+      slEl.innerHTML = html;
+    }).catch(function(err) {
+      var slEl = document.getElementById("mon-sl-health");
+      if (slEl) slEl.innerHTML = "<div class=\"mon-loading\">Unable to reach ShiftLadder status endpoint</div>";
+    });
+  }
+
+  function updateLastChecked() {
+    var lastEl = document.getElementById("mon-last");
+    if (!lastEl) return;
+    if (!lastFetchAt) {
+      lastEl.textContent = "Initializing…";
+      return;
+    }
+    var secs = Math.floor((Date.now() - lastFetchAt) / 1000);
+    var label;
+    if (secs < 5) label = "just now";
+    else if (secs < 60) label = secs + "s ago";
+    else label = Math.floor(secs / 60) + "m ago";
+    lastEl.textContent = "Last checked: " + label;
+  }
+
+  function refreshMonitoring() {
+    Promise.all([fetchUptimeRobot(), fetchEpcDependencies(), fetchShiftladderHealth()]).then(function() {
+      lastFetchAt = Date.now();
+      updateLastChecked();
+    });
+  }
+
+  /* Only fire on this page if the monitoring section exists */
+  if (document.getElementById("monitoring")) {
+    refreshMonitoring();
+    setInterval(refreshMonitoring, 60000);
+    setInterval(updateLastChecked, 5000);
+  }
 
 });
 </script>
