@@ -9,7 +9,8 @@ Personal portfolio site for Matt Kraus, hosted at **krauslabs.com** on Cloudflar
 - **Preview:** https://krauslabs.krauslabs.workers.dev
 
 ## Tech Stack
-- Single HTML file (`index.html`) — no framework, no build step
+- Single HTML file (`public/index.html`) — no framework, no build step
+- **Important:** the static site lives in `public/`. Repo root holds tooling/docs (CLAUDE.md, package.json, scripts/) which must NEVER be deployed. The npm scripts deploy `public/` only — do not change them to deploy `.`.
 - CSS: Custom properties, Plus Jakarta Sans + Fira Code fonts (Google Fonts CDN)
 - JS: Vanilla — floating skills constellation, cursor glow, scroll reveals, browser detection
 - Hosting: Cloudflare Workers & Pages (static asset upload)

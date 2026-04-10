@@ -967,7 +967,16 @@ document.addEventListener("DOMContentLoaded", function() {
     lastEl.textContent = "Last checked: " + label;
   }
 
+  function isTabVisible() {
+    return document.visibilityState === "visible";
+  }
+
   function refreshMonitoring() {
+    /* Skip silently when the tab is in the background — saves API calls,
+       battery, and bandwidth on idle tabs that nobody is looking at.
+       The visibilitychange handler below fires an immediate refresh
+       the moment the tab becomes visible again. */
+    if (!isTabVisible()) return;
     Promise.all([fetchUptimeRobot(), fetchEpcDependencies(), fetchShiftladderHealth()]).then(function() {
       lastFetchAt = Date.now();
       updateLastChecked();
@@ -979,6 +988,9 @@ document.addEventListener("DOMContentLoaded", function() {
     refreshMonitoring();
     setInterval(refreshMonitoring, 60000);
     setInterval(updateLastChecked, 5000);
+    document.addEventListener("visibilitychange", function() {
+      if (isTabVisible()) refreshMonitoring();
+    });
   }
 
 });

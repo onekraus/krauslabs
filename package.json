@@ -4,9 +4,9 @@
   "private": true,
   "description": "krauslabs.com — personal portfolio (single-file static site on Cloudflare Pages)",
   "scripts": {
-    "dev": "wrangler pages dev . --port 8788",
-    "preview": "wrangler pages deploy . --project-name krauslabs --branch main --commit-dirty=true",
-    "deploy": "wrangler pages deploy . --project-name krauslabs --branch production --commit-dirty=true",
+    "dev": "wrangler pages dev public --port 8788 --compatibility-date=2026-03-17",
+    "preview": "wrangler pages deploy public --project-name krauslabs --branch main --commit-dirty=true",
+    "deploy": "wrangler pages deploy public --project-name krauslabs --branch production --commit-dirty=true",
     "purge": "bash scripts/purge-cache.sh"
   }
 }
