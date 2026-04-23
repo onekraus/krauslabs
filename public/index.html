@@ -332,7 +332,7 @@ footer{padding:24px 0;border-top:1px solid var(--border);text-align:center;font-
   <div class="bx r"><div class="bx-n">17</div><div class="bx-l">Years at Fiserv</div></div>
   <div class="bx r"><div class="bx-n">300+</div><div class="bx-l">FI Clients</div></div>
   <div class="bx r"><div class="bx-n">100+</div><div class="bx-l">Servers</div></div>
-  <div class="bx r"><div class="bx-n">5</div><div class="bx-l">Shipped since</div></div>
+  <div class="bx r"><div class="bx-n">6</div><div class="bx-l">Shipped since</div></div>
 </div>
 
 <div class="divider"></div>
@@ -344,6 +344,7 @@ footer{padding:24px 0;border-top:1px solid var(--border);text-align:center;font-
     <div class="pc r"><div><h3>epc-backend</h3><div class="tech">Node.js · Express.js · Redis · Turso/LibSQL · eBay API · RapidAPI</div><p>Production REST API on Fly.io. Auth, rate limiting, data quality gate, eBay integration, Redis caching, SQL persistence. Not a side project — it's deployed, running, and handling real traffic.</p></div><span class="pill pill-live">Live</span></div>
     <div class="pc r"><div><h3>ShiftLadder</h3><div class="tech">Next.js 14 · TypeScript · Prisma · Neon PostgreSQL · FastAPI · Vercel · <a href="https://shiftladder.com" target="_blank">shiftladder.com</a></div><p>Career exploration platform with 104 job profiles enriched with O*NET and BLS data, AI resume matching with gap analysis, Career DNA Quiz, job jingles with persistent audio player, and a local Python Character Studio running FLUX.2 image generation with LoRA-trained characters. Full stack. Built by one person.</p></div><span class="pill pill-live">Live</span></div>
     <div class="pc r"><div><h3>MaxBuyIQ</h3><div class="tech">Swift · SwiftUI · Vision · Core ML · eBay OAuth · MVVM</div><p>Native iOS — barcode scanning, OCR, on-device ML, eBay OAuth. Production-grade architecture: MVVM with async/await, persistent job queues, proper error handling.</p></div><span class="pill pill-qa">QA</span></div>
+    <div class="pc r"><div><h3>NiceBoxFinder</h3><div class="tech">Next.js 16 · TypeScript · Supabase · Upstash Redis · eBay API · Vercel · <a href="https://niceboxfinder.com" target="_blank">niceboxfinder.com</a></div><p>Shipping packaging search engine. Enter item dimensions and weight, get ranked box options from multiple retailers with real landed costs accounting for carrier DIM weight penalties, bulk pricing, and packing materials. eBay Browse API integration, deal scoring algorithm, Supabase auth with Google OAuth, and cron-driven cache pre-warming for sub-200ms searches.</p></div><span class="pill pill-live">Live</span></div>
     <div class="duo">
       <div class="dc r"><h3>AI image pipeline</h3><div class="tech">Gemini · Cloud Vision · dHash</div><p>Parallel recognition across multiple AI providers. Confidence merging, fuzzy dedup, automated brand inference.</p></div>
       <div class="dc r"><h3>RationMe</h3><div class="tech">Swift · SwiftUI · SwiftData · WatchConnectivity</div><p>iOS + Apple Watch. Adaptive scheduling, pattern analytics, bidirectional device comms.</p></div>
@@ -355,7 +356,7 @@ footer{padding:24px 0;border-top:1px solid var(--border);text-align:center;font-
 
 <section class="sec" id="monitoring">
   <div class="sh">// Live systems</div>
-  <p class="mon-intro r"><span class="blink"></span>Real production monitoring across my live systems. Status pulled live from UptimeRobot and direct health checks against the running services. Auto-refreshes every 60 seconds.</p>
+  <p class="mon-intro r"><span class="blink"></span>Real production monitoring across my live systems. Status pulled live from UptimeRobot and direct health checks against the running services. Auto-refreshes every 5 minutes.</p>
 
   <div class="mon-grid">
     <div class="mon-card r" id="mon-shiftladder">
@@ -503,7 +504,7 @@ footer{padding:24px 0;border-top:1px solid var(--border);text-align:center;font-
         </div>
         <div class="s-row">
           <span class="s-label">In production</span>
-          <span class="s-value green">2</span>
+          <span class="s-value green">3</span>
         </div>
         <div class="s-row">
           <span class="s-label">In QA testing</span>
@@ -511,7 +512,7 @@ footer{padding:24px 0;border-top:1px solid var(--border);text-align:center;font-
         </div>
         <div class="s-row">
           <span class="s-label">In development</span>
-          <span class="s-value amber">2</span>
+          <span class="s-value amber">1</span>
         </div>
         <div class="s-row">
           <span class="s-label">Your browser</span>
@@ -783,7 +784,7 @@ document.addEventListener("DOMContentLoaded", function() {
      1. UptimeRobot read-only API (uptime % + response times)
      2. epc-backend /health/dependencies (per-service status)
      3. ShiftLadder /api/public/status (app + DB health)
-     Auto-refreshes every 60 seconds. Degrades gracefully on fetch failures. */
+     Auto-refreshes every 5 minutes. Degrades gracefully on fetch failures. */
 
   var URO_KEY = "ur3322150-674fc6dc8d4e6d8a177b9cc4";
   var URO_MONITORS = "802813985-802813986-802813987-802813988-802813989";
@@ -983,10 +984,12 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  /* Only fire on this page if the monitoring section exists */
+  /* Only fire on this page if the monitoring section exists.
+     5-min refresh matches UptimeRobot's native poll cadence and
+     respects ShiftLadder's CDN cache so we don't hammer Neon. */
   if (document.getElementById("monitoring")) {
     refreshMonitoring();
-    setInterval(refreshMonitoring, 60000);
+    setInterval(refreshMonitoring, 300000);
     setInterval(updateLastChecked, 5000);
     document.addEventListener("visibilitychange", function() {
       if (isTabVisible()) refreshMonitoring();
