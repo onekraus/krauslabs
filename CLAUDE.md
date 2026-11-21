@@ -64,17 +64,17 @@ If npm/wrangler isn't available for any reason, you can still upload directly vi
 
 ## Page Structure (current v7)
 1. **Nav** — Sticky, frosted glass blur, KL monogram logo, 5 links (Work, Career, Skills, References, Contact)
-2. **Hero** — Canvas with floating skill keywords (36 skills drift, light up orange near cursor with connection lines), name in orange monospace, headline "The one they call when production is down.", contact row
+2. **Hero** — Canvas with floating skill keywords (38 skills drift, light up orange near cursor with connection lines), name in orange monospace, headline "The one they call when production is down.", contact row
 3. **Callout bar** — "Multi-person, multi-day operations → One person. A few hours. My script."
 4. **Bento stats** — 5 boxes: 30+ years, 17 at Fiserv, 300+ FI clients, 100+ servers, 13 built since
 5. **Projects** — "What I've been shipping" with ops-intent intro paragraph. Featured rows: epc-backend (Live), ShedOps (Live), ShiftLadder (Live), NiceBoxFinder (Live), RouteWolf (Beta), MaxBuyIQ (QA), GigBench (RC), Market Mutiny (Research). Small cards: Voice Lab, Tidewise, ItemPolish, Resumation, AI image pipeline, RationMe. Counts in the bento ("13 built since") and Quick fit "Proof of work" (13 active / 4 in production / 3 QA-beta / 6 in development) must be kept in sync with this list
 6. **Live Systems** — Live monitoring dashboard. 3 status cards (ShiftLadder, epc-backend, krauslabs.com) + wide ops detail panel (epc dependency breakdown + ShiftLadder app health). Pulls from UptimeRobot read-only API + epc-backend `/health/dependencies` + ShiftLadder `/api/public/status`. Auto-refreshes every 5 min. UptimeRobot read-only API key embedded client-side (safe — read-only). All fetch failures degrade gracefully.
 7. **Automation & AI** — 4 duo cards: AI-assisted dev, Local inference, Workflow automation, Self-hosted infrastructure
-8. **Career** — 4 roles with kickers on Fiserv and SASI entries. Includes CA Technology (1997-2000) to close gap
+8. **Career** — 5 roles matching the Technical Analyst résumé (Sep 2026 version): Independent Software Engineer (Nov 2024–present), Fiserv, Thomson Reuters, CA Technology (card access vendor), SASI. Kickers on Fiserv and SASI. Do not claim "zero gaps" (Dec 2006–Sep 2007 is open)
 9. **Skills grid** — 8 categories, tags glow orange on hover
-10. **Quick fit** — 3 cards: targeting roles, location/availability, proof of work (with browser/OS detection)
+10. **At a glance** — 3 cards: what I do, background, proof of work (with browser/OS detection). No job-seeking language (no "available now", target roles, start date)
 11. **References** — "available on request" line only. Placeholder quote cards were removed 2026-11-21; add quote cards back only with real quotes from colleagues
-12. **CTA** — "Your team needs a problem solver." Email + LinkedIn buttons
+12. **CTA** — "Systems that stay up." Email + LinkedIn buttons
 13. **Footer** — "Built by Matt Kraus"
 
 ## Content Voice
@@ -83,7 +83,7 @@ Confident, earned swagger. Not arrogant toward others — proud of own track rec
 - "Multi-person, multi-day operations → One person. A few hours. My script."
 - "17 years. Same company. They kept promoting the scope because I kept delivering."
 - "Three promotions. Three years."
-- "My next role is in operations and production support — that's where I belong."
+- "Application administration and production support is where I belong."
 
 ## Key Facts (for accuracy)
 - **Fiserv title:** IT Services Administrator, Staff (verified via Work Number / Equifax)

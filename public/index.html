@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kraus Labs — Matthew Kraus</title>
-<meta name="description" content="Matthew Kraus — 30+ years IT, 17 years Fiserv. The person they call when production is down.">
+<meta name="description" content="Matthew Kraus — application administration and production support. 30+ years in IT, 17 years at Fiserv. The person they call when production is down.">
 <link rel="canonical" href="https://krauslabs.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -81,6 +81,7 @@ nav{padding:20px 0;display:flex;align-items:center;justify-content:space-between
 .ex-date{font-family:var(--mono);font-size:.78rem;color:var(--dim);white-space:nowrap}
 .ex-co{font-size:.94rem;color:var(--accent);margin-bottom:8px}
 .ex p{font-size:.94rem;color:var(--sub);line-height:1.7}
+.ex p+p{margin-top:10px}
 .ex .kicker{font-family:var(--mono);font-size:.78rem;color:var(--mint);margin-top:8px;letter-spacing:.02em}
 .sk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:22px}
 .sk h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
@@ -308,10 +309,10 @@ footer{padding:24px 0;border-top:1px solid var(--border);text-align:center;font-
 <header class="hero" id="hero-area">
   <canvas id="net-canvas"></canvas>
   <div class="hero-content">
-    <div class="hero-tag"><span class="dot"></span> Available now</div>
+    <div class="hero-tag"><span class="dot"></span> Application administration · Production support</div>
     <span class="hero-name">Matthew Kraus</span>
     <h1>The one they call<br>when <span class="hl">production is down.</span></h1>
-    <p class="hero-sub">30+ years solving the problems other people escalate to me. 17 years at Fiserv as the last line of defense for <strong>300+ financial institutions</strong>. I was the technical lead on the bridge calls. I built the automation. I mentored the team. And when I left, <strong>I didn't stop building.</strong></p>
+    <p class="hero-sub">30+ years solving the problems other people escalate to me. 17 years at Fiserv administering and supporting mission-critical applications for <strong>300+ financial institutions</strong> — servers, databases, patching, monitoring, upgrades. I was the technical lead on the bridge calls. I built the automation. I mentored the team. And when I left, <strong>I didn't stop building.</strong></p>
     <div class="hero-row">
       <span>Williamstown, NJ</span>
       <a id="em-link" href="#">loading</a>
@@ -339,11 +340,11 @@ footer{padding:24px 0;border-top:1px solid var(--border);text-align:center;font-
 
 <section class="sec" id="work">
   <div class="sh">What I've been shipping</div>
-  <p style="font-size:.92rem;color:var(--sub);margin-bottom:24px;max-width:640px">My next role is in operations and production support — that's where I belong. I built these to keep my engineering instincts sharp and prove I can ship real software, not just maintain it.</p>
+  <p style="font-size:.92rem;color:var(--sub);margin-bottom:24px;max-width:640px">Application administration and production support is where I belong. I built these on my own time to keep my engineering instincts sharp and prove I can ship real software, not just maintain it.</p>
   <div class="p-list">
     <div class="pc r"><div><h3>epc-backend</h3><div class="tech">Node.js · Express.js · Redis · Turso/LibSQL · eBay API · RapidAPI</div><p>Production REST API on Fly.io. Auth, rate limiting, data quality gate, eBay integration, Redis caching, SQL persistence. Not a side project — it's deployed, running, and handling real traffic.</p></div><span class="pill pill-live">Live</span></div>
     <div class="pc r"><div><h3>ShedOps</h3><div class="tech">Raspberry Pi · Python · MQTT · Node-RED · InfluxDB · systemd · Bluetooth LE</div><p>Monitoring and energy-advisory system for my off-grid solar shed. Python bridges run as systemd services, pulling battery, solar, charger, and load telemetry over Bluetooth and Wi-Fi into MQTT, InfluxDB, and a Node-RED dashboard. Stall watchdogs, staleness checks, and a written post-incident review for every failure. Production support habits, applied to my own hardware.</p></div><span class="pill pill-live">Live</span></div>
-    <div class="pc r"><div><h3>ShiftLadder</h3><div class="tech">Next.js 14 · TypeScript · Prisma · Neon PostgreSQL · FastAPI · Stripe · Vercel · <a href="https://shiftladder.com" target="_blank">shiftladder.com</a></div><p>Career exploration platform with 600+ job profiles enriched with O*NET and BLS data, AI resume matching with gap analysis, Career DNA Quiz, job jingles with persistent audio player, and a local Python Character Studio running FLUX.2 image generation with LoRA-trained characters. Full stack. Built by one person.</p></div><span class="pill pill-live">Live</span></div>
+    <div class="pc r"><div><h3>ShiftLadder</h3><div class="tech">Next.js 14 · TypeScript · Prisma · Neon PostgreSQL · FastAPI · Vercel · <a href="https://shiftladder.com" target="_blank">shiftladder.com</a></div><p>Career exploration platform with 600+ job profiles enriched with O*NET and BLS data, AI resume matching with gap analysis, Career DNA Quiz, job jingles with persistent audio player, and a local Python Character Studio running FLUX.2 image generation with LoRA-trained characters. Full stack. Built by one person.</p></div><span class="pill pill-live">Live</span></div>
     <div class="pc r"><div><h3>NiceBoxFinder</h3><div class="tech">Next.js 16 · TypeScript · Supabase · Upstash Redis · Sentry · eBay API · Vercel · <a href="https://niceboxfinder.com" target="_blank">niceboxfinder.com</a></div><p>Shipping packaging search engine. Enter item dimensions and weight, get ranked box options from multiple retailers with real landed costs accounting for carrier DIM weight penalties, bulk pricing, and packing materials. eBay Browse API integration, deal scoring algorithm, Supabase auth with Google OAuth, and cron-driven cache pre-warming for sub-200ms searches.</p></div><span class="pill pill-live">Live</span></div>
     <div class="pc r"><div><h3>RouteWolf</h3><div class="tech">Next.js 16 · Supabase · Claude vision · Swift · SwiftUI · Live Activities · Kotlin</div><p>Tells gig drivers whether a delivery offer is worth taking — in under two seconds. Screenshot in, verdict out: AI vision reads the offer, the backend scores it against the driver's own thresholds, and the iPhone app surfaces the answer as a notification and Live Activity. One Next.js API and Postgres database with row-level security behind a web PWA, a native iOS app, and an Android client in progress.</p></div><span class="pill pill-qa">Beta</span></div>
     <div class="pc r"><div><h3>MaxBuyIQ</h3><div class="tech">Swift · SwiftUI · Vision · Core ML · eBay OAuth · MVVM</div><p>Native iOS for resellers — barcode scanning, OCR, on-device ML, eBay OAuth, GPS-tagged shopping trips. Production-grade architecture: MVVM with async/await, persistent job queues, proper error handling.</p></div><span class="pill pill-qa">QA</span></div>
@@ -426,27 +427,34 @@ footer{padding:24px 0;border-top:1px solid var(--border);text-align:center;font-
 <div class="divider"></div>
 
 <section class="sec" id="career">
-  <div class="sh">Career — 30 years, zero gaps</div>
+  <div class="sh">Career — 30+ years</div>
+  <div class="ex r">
+    <div class="ex-top"><span class="ex-role">Independent Software Engineer</span><span class="ex-date">Nov 2024 — Present</span></div>
+    <div class="ex-co">Self-Employed · Williamstown, NJ</div>
+    <p>Built and deployed a production Express.js REST API on Fly.io with Redis caching, SQL persistence, eBay API integration, token-based authentication, rate limiting, and an automated data quality gate. Engineered native iOS and watchOS apps in Swift and SwiftUI with barcode scanning, OCR, and on-device ML. Everything in the section above is from this period.</p>
+  </div>
   <div class="ex r">
     <div class="ex-top"><span class="ex-role">IT Services Administrator, Staff</span><span class="ex-date">Sep 2007 — Nov 2024</span></div>
     <div class="ex-co">Fiserv, Inc. (formerly Open Solutions) · Remote — Berkeley Heights, NJ</div>
-    <p>The person they paged at 2 AM when 300 financial institutions were waiting. Technical lead on P1/P2 bridge calls — hands on the keyboard, working the fix with dev, DBA, network, and infrastructure teams in real time. Managed 60–100+ servers across multiple data centers. Built the automation that made multi-day operations take hours. Splunk, ServiceNow, Jira, ITIL. Mentored every junior engineer who came through the team. Conducted technical interviews because they trusted my judgment.</p>
+    <p>The person they paged at 2 AM when 300 financial institutions were waiting. Administered and supported mission-critical internet banking, general ledger, and mobile banking applications in production and test — system configuration, user access, performance monitoring — under strict SLAs. Server-level administration for 60–100+ Windows Server, RHEL, and AIX instances across multiple data centers.</p>
+    <p>Technical owner of four client-facing platforms at once: FAS general ledger (from inception through 15 years of production), DNAWeb, Cunify Web internet banking, and Mobiliti mobile banking. Owned the full lifecycle for each — client onboarding, deconversions, version upgrades, data center migrations, and OS upgrade programs run hands-on and through a migration vendor, with release validation before every production cutover.</p>
+    <p>Technical lead on P1/P2 bridge calls — hands on the keyboard, working the fix with dev, DBA, network, and infrastructure teams in real time. Remediated vulnerabilities across OS, middleware, and application layers: penetration test findings, security audits, fleet-wide SSL/TLS certificate renewals. Watched the platforms in Splunk and enterprise monitoring to catch degradation before users did. Ran incident, change, and problem management in ServiceNow and Jira following ITIL processes. Built the PowerShell, Bash, and Perl automation that made multi-day operations take hours. Wrote the runbooks, SOPs, and training materials, mentored the junior engineers, and conducted technical interviews because they trusted my judgment.</p>
     <div class="kicker">17 years. Same company. They kept promoting the scope because I kept delivering.</div>
   </div>
   <div class="ex r">
     <div class="ex-top"><span class="ex-role">Software Engineer II</span><span class="ex-date">Aug 2000 — Dec 2006</span></div>
-    <div class="ex-co">Thomson Reuters (formerly ISI) · Philadelphia, PA</div>
-    <p>Perl and C data pipelines on UNIX. Automated document delivery at scale. High-volume database loading for scientific publications. The kind of backend work that only breaks when nobody's maintaining it.</p>
+    <div class="ex-co">Thomson Reuters (formerly The Institute for Scientific Information) · Philadelphia, PA</div>
+    <p>Perl and C applications on UNIX. Large-scale scientific document delivery and data processing, including a high-volume database loading pipeline. The kind of backend work that only breaks when nobody's maintaining it.</p>
   </div>
   <div class="ex r">
     <div class="ex-top"><span class="ex-role">Programmer / Analyst</span><span class="ex-date">1997 — 2000</span></div>
-    <div class="ex-co">CA Technology (Controlled Access) · Moorestown, NJ</div>
-    <p>C and ESQL/C development on UNIX and Windows. Built socket server daemons and GUI client applications from scratch. Wrote Informix stored procedures and database triggers. Provided direct client-facing technical support — learned early that understanding the user's problem matters as much as writing the fix.</p>
+    <div class="ex-co">CA Technology (Controlled Access) · Electronic card access vendor · Moorestown, NJ</div>
+    <p>Developed and supported electronic card access control software for a security systems vendor — card reader interfaces, access-level configuration, and authorization code. C and ESQL/C on UNIX and Windows: socket server daemons and GUI client applications built from scratch, plus Informix stored procedures and triggers behind the access control data. Provided client-facing technical support for access control deployments and integrations — learned early that understanding the user's problem matters as much as writing the fix.</p>
   </div>
   <div class="ex r">
     <div class="ex-top"><span class="ex-role">Support → QA → Maintenance Programmer</span><span class="ex-date">1994 — 1997</span></div>
     <div class="ex-co">Stores Automated Systems Inc. (SASI) · Bristol, PA</div>
-    <p>Started on the phones supporting POS systems. Got promoted to QA. Then to the TAC Team — the people they called when support couldn't solve it. Then to programmer. Three promotions in three years. The pattern started here.</p>
+    <p>Started on the phones supporting POS systems. Got promoted to QA. Then to the TAC Team — the people they called when support couldn't solve it — where I became lead debug analyst for CRIND (Card Reader in Dispenser) units, reading low-level debug output to diagnose card reader failures at the pump. Then to programmer. Three promotions in three years. The pattern started here.</p>
     <div class="kicker">Three promotions. Three years. They kept moving me up because I kept solving what others couldn't.</div>
   </div>
 </section>
@@ -456,55 +464,55 @@ footer{padding:24px 0;border-top:1px solid var(--border);text-align:center;font-
 <section class="sec" id="skills">
   <div class="sh">The toolkit</div>
   <div class="sk-grid r">
-    <div class="sk"><h4>ITSM & Monitoring</h4><div class="tg"><span class="t">ServiceNow</span><span class="t">Jira</span><span class="t">Splunk</span></div></div>
-    <div class="sk"><h4>Databases</h4><div class="tg"><span class="t">SQL Server</span><span class="t">Oracle</span><span class="t">Informix</span><span class="t">PostgreSQL</span><span class="t">SQLite</span></div></div>
-    <div class="sk"><h4>Languages</h4><div class="tg"><span class="t">PowerShell</span><span class="t">Bash</span><span class="t">Perl</span><span class="t">SQL</span><span class="t">C</span><span class="t">Python</span><span class="t">TypeScript</span><span class="t">Swift</span></div></div>
-    <div class="sk"><h4>Infrastructure</h4><div class="tg"><span class="t">Ansible</span><span class="t">Docker</span><span class="t">VMware</span><span class="t">Tomcat</span><span class="t">Git</span><span class="t">RHEL</span><span class="t">AIX</span><span class="t">systemd</span><span class="t">MQTT</span><span class="t">InfluxDB</span></div></div>
-    <div class="sk"><h4>Web & Frameworks</h4><div class="tg"><span class="t">Next.js</span><span class="t">React</span><span class="t">Express.js</span><span class="t">FastAPI</span><span class="t">Tailwind</span><span class="t">Prisma</span><span class="t">Supabase</span><span class="t">SwiftUI</span></div></div>
-    <div class="sk"><h4>AI & ML</h4><div class="tg"><span class="t">Claude Code</span><span class="t">FLUX.2</span><span class="t">Gemini</span><span class="t">Cloud Vision</span><span class="t">Core ML</span><span class="t">Ollama</span><span class="t">LoRA</span></div></div>
-    <div class="sk"><h4>Networking</h4><div class="tg"><span class="t">DNS</span><span class="t">F5</span><span class="t">TCP/IP</span><span class="t">SSL/TLS</span><span class="t">Wireshark</span></div></div>
-    <div class="sk"><h4>Practices</h4><div class="tg"><span class="t">ITIL</span><span class="t">Incident Mgmt</span><span class="t">DR Testing</span><span class="t">Change Mgmt</span><span class="t">RCA</span></div></div>
+    <div class="sk"><h4>ITSM & Monitoring</h4><div class="tg"><span class="t">ServiceNow</span><span class="t">Jira Service Mgmt</span><span class="t">Splunk</span><span class="t">Log analysis</span><span class="t">Alerting</span></div></div>
+    <div class="sk"><h4>Operating Systems</h4><div class="tg"><span class="t">Windows Server</span><span class="t">IIS</span><span class="t">RHEL</span><span class="t">AIX</span><span class="t">UNIX</span></div></div>
+    <div class="sk"><h4>Databases & Integration</h4><div class="tg"><span class="t">SQL Server</span><span class="t">Oracle</span><span class="t">Informix</span><span class="t">PostgreSQL</span><span class="t">SQLite</span><span class="t">ODBC</span><span class="t">REST APIs</span></div></div>
+    <div class="sk"><h4>Scripting & Languages</h4><div class="tg"><span class="t">PowerShell</span><span class="t">SQL</span><span class="t">Bash</span><span class="t">Perl</span><span class="t">Python</span><span class="t">C</span><span class="t">C#</span><span class="t">Java</span><span class="t">TypeScript</span><span class="t">Swift</span></div></div>
+    <div class="sk"><h4>Infrastructure</h4><div class="tg"><span class="t">VMware</span><span class="t">Docker</span><span class="t">Ansible</span><span class="t">Tomcat</span><span class="t">Git</span><span class="t">F5</span><span class="t">systemd</span><span class="t">MQTT</span><span class="t">InfluxDB</span></div></div>
+    <div class="sk"><h4>Networking & Security</h4><div class="tg"><span class="t">DNS</span><span class="t">TCP/IP</span><span class="t">Firewall rules</span><span class="t">SSL/TLS</span><span class="t">SSH</span><span class="t">Wireshark</span><span class="t">Pen test remediation</span></div></div>
+    <div class="sk"><h4>Practices</h4><div class="tg"><span class="t">ITIL</span><span class="t">Incident Mgmt</span><span class="t">Change Mgmt</span><span class="t">Problem Mgmt</span><span class="t">RCA</span><span class="t">UAT</span><span class="t">DR Testing</span><span class="t">Vulnerability Remediation</span></div></div>
+    <div class="sk"><h4>Web & AI</h4><div class="tg"><span class="t">Next.js</span><span class="t">React</span><span class="t">Express.js</span><span class="t">FastAPI</span><span class="t">Supabase</span><span class="t">SwiftUI</span><span class="t">Claude Code</span><span class="t">Core ML</span><span class="t">Ollama</span></div></div>
   </div>
 </section>
 
 <div class="divider"></div>
 
 <section class="sec" id="status">
-  <div class="sh">The quick fit</div>
+  <div class="sh">At a glance</div>
   <div class="status-panel r">
     <div class="status-grid">
 
       <div class="status-card">
-        <h4>Targeting these roles</h4>
-        <div class="s-row"><span class="s-label">Senior Application Support Engineer</span></div>
-        <div class="s-row"><span class="s-label">Application Support Engineer</span></div>
-        <div class="s-row"><span class="s-label">IT Operations Engineer</span></div>
-        <div class="s-row"><span class="s-label">Senior Production Support Engineer</span></div>
-        <div class="s-row"><span class="s-label">Senior Systems Administrator</span></div>
-        <div class="s-row"><span class="s-label">Platform Operations Engineer</span></div>
+        <h4>What I do</h4>
+        <div class="s-row"><span class="s-label">Third-party application administration</span></div>
+        <div class="s-row"><span class="s-label">Server administration — Windows & Linux</span></div>
+        <div class="s-row"><span class="s-label">Monitoring, alerting & log analysis</span></div>
+        <div class="s-row"><span class="s-label">Vulnerability remediation & patching</span></div>
+        <div class="s-row"><span class="s-label">Upgrades, UAT & release validation</span></div>
+        <div class="s-row"><span class="s-label">Vendor coordination & project leadership</span></div>
       </div>
 
       <div class="status-card">
-        <h4>Location & availability</h4>
+        <h4>Background</h4>
         <div class="s-row">
-          <span class="s-label">Remote</span>
-          <span class="s-value green">Yes</span>
+          <span class="s-label">Based in</span>
+          <span class="s-value green">Williamstown, NJ</span>
         </div>
         <div class="s-row">
-          <span class="s-label">On-site area</span>
-          <span class="s-value green">S. Jersey / Phila</span>
+          <span class="s-label">Years in IT</span>
+          <span class="s-value green">30+</span>
         </div>
         <div class="s-row">
-          <span class="s-label">Start date</span>
-          <span class="s-value green">Immediately</span>
+          <span class="s-label">On-call model</span>
+          <span class="s-value green">24x7</span>
         </div>
         <div class="s-row">
-          <span class="s-label">Work auth</span>
-          <span class="s-value green">U.S. Citizen</span>
+          <span class="s-label">ITIL</span>
+          <span class="s-value green">Practiced daily</span>
         </div>
         <div class="s-row">
-          <span class="s-label">Contract / FTE</span>
-          <span class="s-value green">Either</span>
+          <span class="s-label">Card access</span>
+          <span class="s-value green">1997 – 2000</span>
         </div>
       </div>
 
@@ -550,8 +558,8 @@ footer{padding:24px 0;border-top:1px solid var(--border);text-align:center;font-
 <div class="divider"></div>
 
 <div class="cta" id="contact">
-  <h2>Your team needs <span class="hl">a problem solver.</span></h2>
-  <p>Application Support · IT Operations · Production Support · Platform Engineering. On-site, hybrid, or remote in Greater Philadelphia / South Jersey. I'll make your systems more reliable than they've ever been.</p>
+  <h2>Systems that <span class="hl">stay up.</span></h2>
+  <p>Application administration · Production support · Monitoring · Automation. If you want to compare notes on keeping critical systems reliable, get in touch.</p>
   <div class="cta-btns">
     <a id="cta-email" href="#" class="cb cb-fill">Let's talk</a>
     <a href="https://linkedin.com/in/onekraus" target="_blank" class="cb cb-out">LinkedIn</a>
@@ -607,7 +615,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var MOUSE_RADIUS = 220;
 
   var SKILLS = [
-    "ServiceNow", "Jira", "Splunk", "MQTT", "InfluxDB",
+    "ServiceNow", "Jira", "Splunk", "Windows Server", "RHEL", "ODBC", "UAT",
     "SQL Server", "Oracle", "PostgreSQL", "Redis",
     "PowerShell", "Bash", "Perl", "Python", "Swift", "TypeScript",
     "Docker", "VMware", "Ansible", "Tomcat", "Git",
