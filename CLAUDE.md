@@ -66,8 +66,8 @@ If npm/wrangler isn't available for any reason, you can still upload directly vi
 1. **Nav** — Sticky, frosted glass blur, KL monogram logo, 5 links (Work, Career, Skills, References, Contact)
 2. **Hero** — Canvas with floating skill keywords (36 skills drift, light up orange near cursor with connection lines), name in orange monospace, headline "The one they call when production is down.", contact row
 3. **Callout bar** — "Multi-person, multi-day operations → One person. A few hours. My script."
-4. **Bento stats** — 5 boxes: 30+ years, 17 at Fiserv, 300+ FI clients, 100+ servers, 5 shipped
-5. **Projects** — "What I've been shipping" with ops-intent intro paragraph. epc-backend (Live), ShiftLadder (Live), MaxBuyIQ (QA), AI image pipeline, RationMe
+4. **Bento stats** — 5 boxes: 30+ years, 17 at Fiserv, 300+ FI clients, 100+ servers, 13 built since
+5. **Projects** — "What I've been shipping" with ops-intent intro paragraph. Featured rows: epc-backend (Live), ShedOps (Live), ShiftLadder (Live), NiceBoxFinder (Live), RouteWolf (Beta), MaxBuyIQ (QA), GigBench (RC), Market Mutiny (Research). Small cards: CoilNotes, Tidewise, ItemPolish, Resumation, AI image pipeline, RationMe. Counts in the bento ("13 built since") and Quick fit "Proof of work" (13 active / 5 in production / 3 QA-beta / 5 in development) must be kept in sync with this list
 6. **Live Systems** — Live monitoring dashboard. 3 status cards (ShiftLadder, epc-backend, krauslabs.com) + wide ops detail panel (epc dependency breakdown + ShiftLadder app health). Pulls from UptimeRobot read-only API + epc-backend `/health/dependencies` + ShiftLadder `/api/public/status`. Auto-refreshes every 5 min. UptimeRobot read-only API key embedded client-side (safe — read-only). All fetch failures degrade gracefully.
 7. **Automation & AI** — 4 duo cards: AI-assisted dev, Local inference, Workflow automation, Self-hosted infrastructure
 8. **Career** — 4 roles with kickers on Fiserv and SASI entries. Includes CA Technology (1997-2000) to close gap

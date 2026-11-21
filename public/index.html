@@ -332,7 +332,7 @@ footer{padding:24px 0;border-top:1px solid var(--border);text-align:center;font-
   <div class="bx r"><div class="bx-n">17</div><div class="bx-l">Years at Fiserv</div></div>
   <div class="bx r"><div class="bx-n">300+</div><div class="bx-l">FI Clients</div></div>
   <div class="bx r"><div class="bx-n">100+</div><div class="bx-l">Servers</div></div>
-  <div class="bx r"><div class="bx-n">6</div><div class="bx-l">Shipped since</div></div>
+  <div class="bx r"><div class="bx-n">13</div><div class="bx-l">Built since</div></div>
 </div>
 
 <div class="divider"></div>
@@ -342,9 +342,21 @@ footer{padding:24px 0;border-top:1px solid var(--border);text-align:center;font-
   <p style="font-size:.92rem;color:var(--sub);margin-bottom:24px;max-width:640px">My next role is in operations and production support — that's where I belong. I built these to keep my engineering instincts sharp and prove I can ship real software, not just maintain it.</p>
   <div class="p-list">
     <div class="pc r"><div><h3>epc-backend</h3><div class="tech">Node.js · Express.js · Redis · Turso/LibSQL · eBay API · RapidAPI</div><p>Production REST API on Fly.io. Auth, rate limiting, data quality gate, eBay integration, Redis caching, SQL persistence. Not a side project — it's deployed, running, and handling real traffic.</p></div><span class="pill pill-live">Live</span></div>
-    <div class="pc r"><div><h3>ShiftLadder</h3><div class="tech">Next.js 14 · TypeScript · Prisma · Neon PostgreSQL · FastAPI · Vercel · <a href="https://shiftladder.com" target="_blank">shiftladder.com</a></div><p>Career exploration platform with 104 job profiles enriched with O*NET and BLS data, AI resume matching with gap analysis, Career DNA Quiz, job jingles with persistent audio player, and a local Python Character Studio running FLUX.2 image generation with LoRA-trained characters. Full stack. Built by one person.</p></div><span class="pill pill-live">Live</span></div>
-    <div class="pc r"><div><h3>MaxBuyIQ</h3><div class="tech">Swift · SwiftUI · Vision · Core ML · eBay OAuth · MVVM</div><p>Native iOS — barcode scanning, OCR, on-device ML, eBay OAuth. Production-grade architecture: MVVM with async/await, persistent job queues, proper error handling.</p></div><span class="pill pill-qa">QA</span></div>
-    <div class="pc r"><div><h3>NiceBoxFinder</h3><div class="tech">Next.js 16 · TypeScript · Supabase · Upstash Redis · eBay API · Vercel · <a href="https://niceboxfinder.com" target="_blank">niceboxfinder.com</a></div><p>Shipping packaging search engine. Enter item dimensions and weight, get ranked box options from multiple retailers with real landed costs accounting for carrier DIM weight penalties, bulk pricing, and packing materials. eBay Browse API integration, deal scoring algorithm, Supabase auth with Google OAuth, and cron-driven cache pre-warming for sub-200ms searches.</p></div><span class="pill pill-live">Live</span></div>
+    <div class="pc r"><div><h3>ShedOps</h3><div class="tech">Raspberry Pi · Python · MQTT · Node-RED · InfluxDB · systemd · Bluetooth LE</div><p>Monitoring and energy-advisory system for my off-grid solar shed. Python bridges run as systemd services, pulling battery, solar, charger, and load telemetry over Bluetooth and Wi-Fi into MQTT, InfluxDB, and a Node-RED dashboard. Stall watchdogs, staleness checks, and a written post-incident review for every failure. Production support habits, applied to my own hardware.</p></div><span class="pill pill-live">Live</span></div>
+    <div class="pc r"><div><h3>ShiftLadder</h3><div class="tech">Next.js 14 · TypeScript · Prisma · Neon PostgreSQL · FastAPI · Stripe · Vercel · <a href="https://shiftladder.com" target="_blank">shiftladder.com</a></div><p>Career exploration platform with 600+ job profiles enriched with O*NET and BLS data, AI resume matching with gap analysis, Career DNA Quiz, job jingles with persistent audio player, and a local Python Character Studio running FLUX.2 image generation with LoRA-trained characters. Full stack. Built by one person.</p></div><span class="pill pill-live">Live</span></div>
+    <div class="pc r"><div><h3>NiceBoxFinder</h3><div class="tech">Next.js 16 · TypeScript · Supabase · Upstash Redis · Sentry · eBay API · Vercel · <a href="https://niceboxfinder.com" target="_blank">niceboxfinder.com</a></div><p>Shipping packaging search engine. Enter item dimensions and weight, get ranked box options from multiple retailers with real landed costs accounting for carrier DIM weight penalties, bulk pricing, and packing materials. eBay Browse API integration, deal scoring algorithm, Supabase auth with Google OAuth, and cron-driven cache pre-warming for sub-200ms searches.</p></div><span class="pill pill-live">Live</span></div>
+    <div class="pc r"><div><h3>RouteWolf</h3><div class="tech">Next.js 16 · Supabase · Claude vision · Swift · SwiftUI · Live Activities · Kotlin</div><p>Tells gig drivers whether a delivery offer is worth taking — in under two seconds. Screenshot in, verdict out: AI vision reads the offer, the backend scores it against the driver's own thresholds, and the iPhone app surfaces the answer as a notification and Live Activity. One Next.js API and Postgres database with row-level security behind a web PWA, a native iOS app, and an Android client in progress.</p></div><span class="pill pill-qa">Beta</span></div>
+    <div class="pc r"><div><h3>MaxBuyIQ</h3><div class="tech">Swift · SwiftUI · Vision · Core ML · eBay OAuth · MVVM</div><p>Native iOS for resellers — barcode scanning, OCR, on-device ML, eBay OAuth, GPS-tagged shopping trips. Production-grade architecture: MVVM with async/await, persistent job queues, proper error handling.</p></div><span class="pill pill-qa">QA</span></div>
+    <div class="pc r"><div><h3>GigBench</h3><div class="tech">Swift · SwiftUI · SwiftData · Swift Testing · iOS · iPadOS · macOS</div><p>Gig-work financial command center that answers one question: how much more do I need to earn today? One multiplatform target on a pure-Swift financial core — money is integer cents, never floating point, and every balance is derived from entries, never stored.</p></div><span class="pill pill-qa">RC</span></div>
+    <div class="pc r"><div><h3>Market Mutiny</h3><div class="tech">Python · FastAPI · pandas · SQLite · React · TypeScript · Alpaca API · Ollama</div><p>Local-first strategy research lab. Cached market-data pipeline with restatement detection, a backtester that models fees and slippage, and a dashboard with stale and disconnected states built in. Paper trading only, behind adapters that refuse write calls by default. Guardrails first — the way you'd build anything that touches money.</p></div><span class="pill pill-dev">Research</span></div>
+    <div class="duo">
+      <div class="dc r"><h3>CoilNotes</h3><div class="tech">TypeScript · Vite · IndexedDB · Cloudflare Pages · Neon · Playwright · <a href="https://coilnotes.app" target="_blank">coilnotes.app</a></div><p>Offline-first PWA for logging e-liquid flavors and hardware. Works with no account; optional sign-in adds cloud sync through self-hosted auth and Postgres row-level security.</p></div>
+      <div class="dc r"><h3>Tidewise</h3><div class="tech">Python · FastAPI · Expo · Monte Carlo · pytest</div><p>Shows savers their odds of hitting a goal by a date. Walk-forward backtests, a luck filter, and a hash-chained journal that logs every signal before the outcome is known.</p></div>
+    </div>
+    <div class="duo">
+      <div class="dc r"><h3>ItemPolish</h3><div class="tech">Swift · SwiftUI · Core ML · Vision · Core Image</div><p>iPhone app that removes photo backgrounds on-device and exports consistent square listing photos. No backend, no uploads, no subscription.</p></div>
+      <div class="dc r"><h3>Resumation</h3><div class="tech">Swift · SwiftUI · SwiftData · Ollama · Apple Foundation Models</div><p>Mac-first, local-first job-search workspace. Every career fact carries provenance and stays unverified until confirmed against its source.</p></div>
+    </div>
     <div class="duo">
       <div class="dc r"><h3>AI image pipeline</h3><div class="tech">Gemini · Cloud Vision · dHash</div><p>Parallel recognition across multiple AI providers. Confidence merging, fuzzy dedup, automated brand inference.</p></div>
       <div class="dc r"><h3>RationMe</h3><div class="tech">Swift · SwiftUI · SwiftData · WatchConnectivity</div><p>iOS + Apple Watch. Adaptive scheduling, pattern analytics, bidirectional device comms.</p></div>
@@ -403,11 +415,11 @@ footer{padding:24px 0;border-top:1px solid var(--border);text-align:center;font-
   <div class="sh">Automation & AI engineering</div>
   <div class="duo">
     <div class="dc r"><h3>AI-assisted development</h3><div class="tech">Claude Code · ChatGPT · NotebookLM · Ollama</div><p>Hundreds of hours using AI as a force multiplier — code generation, debugging, API integration, architecture decisions. Every project on this page was built with AI-assisted workflows.</p></div>
-    <div class="dc r"><h3>Local AI inference</h3><div class="tech">FLUX.2 Klein · Google TTS · Suno AI · M4 128GB</div><p>All image generation runs locally on my machine. Custom LoRA model training, text-to-speech, music generation. No cloud GPU bill. No external dependencies.</p></div>
+    <div class="dc r"><h3>Local AI inference</h3><div class="tech">FLUX.2 Klein · MLX · Kokoro · Qwen3-TTS · Google TTS · Suno AI · M4 128GB</div><p>Image generation and voice synthesis run locally on my machine. Custom LoRA model training, text-to-speech, music generation, and a native macOS voice lab for comparing local TTS engines. No cloud GPU bill. No external dependencies.</p></div>
   </div>
   <div class="duo">
     <div class="dc r"><h3>Workflow automation</h3><div class="tech">n8n · Ollama · RSS · ntfy.sh</div><p>Built multi-source automated pipelines with deduplication, geo-filtering, AI-powered content tailoring, and push notifications. If a process runs more than once, I automate it.</p></div>
-    <div class="dc r"><h3>Self-hosted infrastructure</h3><div class="tech">Fly.io · Cloudflare · Upstash Redis · Turso · Vercel</div><p>Production deployments across multiple cloud platforms. This portfolio, my API, and my SaaS app all run on infrastructure I configured and maintain myself.</p></div>
+    <div class="dc r"><h3>Self-hosted infrastructure</h3><div class="tech">Fly.io · Cloudflare · Vercel · Supabase · Neon · Upstash Redis · Turso · Raspberry Pi</div><p>Production deployments across multiple cloud platforms, plus a Raspberry Pi running 24/7 on solar. This portfolio, my API, and my web apps all run on infrastructure I configured and maintain myself.</p></div>
   </div>
 </section>
 
@@ -447,8 +459,8 @@ footer{padding:24px 0;border-top:1px solid var(--border);text-align:center;font-
     <div class="sk"><h4>ITSM & Monitoring</h4><div class="tg"><span class="t">ServiceNow</span><span class="t">Jira</span><span class="t">Splunk</span><span class="t">Datadog</span><span class="t">New Relic</span></div></div>
     <div class="sk"><h4>Databases</h4><div class="tg"><span class="t">SQL Server</span><span class="t">Oracle</span><span class="t">Informix</span><span class="t">PostgreSQL</span><span class="t">SQLite</span></div></div>
     <div class="sk"><h4>Languages</h4><div class="tg"><span class="t">PowerShell</span><span class="t">Bash</span><span class="t">Perl</span><span class="t">SQL</span><span class="t">C</span><span class="t">Python</span><span class="t">TypeScript</span><span class="t">Swift</span></div></div>
-    <div class="sk"><h4>Infrastructure</h4><div class="tg"><span class="t">Ansible</span><span class="t">Docker</span><span class="t">VMware</span><span class="t">Tomcat</span><span class="t">Git</span><span class="t">RHEL</span><span class="t">AIX</span></div></div>
-    <div class="sk"><h4>Web & Frameworks</h4><div class="tg"><span class="t">Next.js</span><span class="t">React</span><span class="t">Express.js</span><span class="t">FastAPI</span><span class="t">Tailwind</span><span class="t">Prisma</span></div></div>
+    <div class="sk"><h4>Infrastructure</h4><div class="tg"><span class="t">Ansible</span><span class="t">Docker</span><span class="t">VMware</span><span class="t">Tomcat</span><span class="t">Git</span><span class="t">RHEL</span><span class="t">AIX</span><span class="t">systemd</span><span class="t">MQTT</span><span class="t">InfluxDB</span></div></div>
+    <div class="sk"><h4>Web & Frameworks</h4><div class="tg"><span class="t">Next.js</span><span class="t">React</span><span class="t">Express.js</span><span class="t">FastAPI</span><span class="t">Tailwind</span><span class="t">Prisma</span><span class="t">Supabase</span><span class="t">SwiftUI</span></div></div>
     <div class="sk"><h4>AI & ML</h4><div class="tg"><span class="t">Claude Code</span><span class="t">FLUX.2</span><span class="t">Gemini</span><span class="t">Cloud Vision</span><span class="t">Core ML</span><span class="t">Ollama</span><span class="t">LoRA</span></div></div>
     <div class="sk"><h4>Networking</h4><div class="tg"><span class="t">DNS</span><span class="t">F5</span><span class="t">TCP/IP</span><span class="t">SSL/TLS</span><span class="t">Wireshark</span></div></div>
     <div class="sk"><h4>Practices</h4><div class="tg"><span class="t">ITIL</span><span class="t">Incident Mgmt</span><span class="t">DR Testing</span><span class="t">Change Mgmt</span><span class="t">RCA</span></div></div>
@@ -500,19 +512,19 @@ footer{padding:24px 0;border-top:1px solid var(--border);text-align:center;font-
         <h4>Proof of work</h4>
         <div class="s-row">
           <span class="s-label">Active projects</span>
-          <span class="s-value amber">5</span>
+          <span class="s-value amber">13</span>
         </div>
         <div class="s-row">
           <span class="s-label">In production</span>
-          <span class="s-value green">3</span>
+          <span class="s-value green">5</span>
         </div>
         <div class="s-row">
-          <span class="s-label">In QA testing</span>
-          <span class="s-value blue">1 (iOS app)</span>
+          <span class="s-label">In QA / beta</span>
+          <span class="s-value blue">3</span>
         </div>
         <div class="s-row">
           <span class="s-label">In development</span>
-          <span class="s-value amber">1</span>
+          <span class="s-value amber">5</span>
         </div>
         <div class="s-row">
           <span class="s-label">Your browser</span>
