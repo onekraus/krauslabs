@@ -374,7 +374,7 @@ footer{padding:24px 0;border-top:1px solid var(--border);text-align:center;font-
   <div class="mon-grid">
     <div class="mon-card r" id="mon-shiftladder">
       <div class="mon-card-head"><span class="mon-name">ShiftLadder</span><span class="mon-dot"></span></div>
-      <div class="mon-metric" id="msl-metric">— %</div>
+      <div class="mon-metric" id="msl-metric">—</div>
       <div class="mon-sub" id="msl-sub">checking…</div>
     </div>
     <div class="mon-card r" id="mon-epc">
@@ -850,13 +850,22 @@ document.addEventListener("DOMContentLoaded", function() {
       var sl = byId[802813985];
       if (sl) {
         var slUptime = sl.custom_uptime_ratio || "0";
-        setText("msl-metric", fmtUptime(slUptime));
         var slRt = "—";
         if (sl.response_times && sl.response_times.length > 0) {
           slRt = sl.response_times[0].value + " ms";
         }
-        setText("msl-sub", "7-day uptime · " + slRt + " avg");
-        setCardState("mon-shiftladder", sl.status === 2 ? uptimeState(slUptime) : "down");
+        /* TEMPORARY (2026-11-21): set SL_SHOW_UPTIME back to true to show the
+           7-day uptime percentage again once the outage has left the window. */
+        var SL_SHOW_UPTIME = false;
+        if (SL_SHOW_UPTIME) {
+          setText("msl-metric", fmtUptime(slUptime));
+          setText("msl-sub", "7-day uptime · " + slRt + " avg");
+          setCardState("mon-shiftladder", sl.status === 2 ? uptimeState(slUptime) : "down");
+        } else {
+          setText("msl-metric", sl.status === 2 ? "Online" : "Down");
+          setText("msl-sub", "current status · " + slRt + " avg");
+          setCardState("mon-shiftladder", sl.status === 2 ? "up" : "down");
+        }
       }
 
       /* krauslabs.com card uses portfolio monitor (802813989) */
